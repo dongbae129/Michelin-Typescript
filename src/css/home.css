@@ -1,0 +1,229 @@
+.rootTest {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("../pages/waterback.png");
+  background-size: cover;
+  overflow: hidden;
+}
+.rootTest > div:first-child {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  margin-top: 0;
+  padding-top: 20px;
+  position: relative;
+}
+.rootTest input {
+  width: 500px;
+  height: 35px;
+  border: 2px solid #a5d8ff;
+  font-size: 1.3rem;
+  text-align: center;
+  border-radius: 10px;
+}
+.rootTest .searchimg {
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: -30px;
+  z-index: 10;
+  height: 35px;
+  font-size: 24px;
+  color: #ffc078;
+}
+input:focus {
+  outline: none;
+}
+.mainInput {
+  z-index: 10;
+}
+
+@keyframes treeani {
+  100% {
+    transform: translateX(-1000px);
+  }
+}
+
+.train,
+.trainrail {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 15%;
+  transform-origin: left;
+}
+.trainrail {
+  perspective: 500px;
+  top: 55%;
+  width: 70%;
+  overflow: hidden;
+}
+
+.trainrail > img,
+.train > img:first-child {
+  width: 100%;
+  height: 100%;
+  transform: rotateY(180deg);
+}
+.train > img:nth-child(2) {
+  position: absolute;
+  top: -45%;
+  right: 1%;
+  width: 25%;
+  height: 40%;
+  transform: rotateY(180deg);
+  animation: traincloud 3s linear infinite;
+}
+@keyframes traincloud {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2) rotateY(180deg) translate(40px, -20px);
+    opacity: 0.5;
+  }
+}
+.trainrail > img {
+  width: 100vw;
+  transform: rotateX(35deg);
+}
+.trainrail > img {
+  animation: trainrailmove 3s linear infinite;
+  animation-fill-mode: forwards;
+}
+@keyframes trainrailmove {
+  100% {
+    transform: translate(-20%) rotateX(35deg);
+  }
+}
+
+.imgtest {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+}
+
+.rootTest > section {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+.rootTest > section .snow1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("../pages/ss.png") repeat;
+  background-size: 300px;
+  width: 100%;
+  height: 100%;
+  animation: snowdrop1 10s linear infinite;
+}
+.rootTest > section .snow2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("../pages/ss.png") repeat;
+  background-size: 800px;
+  width: 100%;
+  height: 100%;
+  animation: snowdrop2 10s linear infinite;
+}
+.rootTest > section .snow3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("../pages/ss.png") repeat;
+  width: 100%;
+  height: 100%;
+  animation: snowdrop3 10s linear infinite;
+}
+@keyframes cloud {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes snowdrop1 {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 100px 100vh;
+  }
+}
+@keyframes snowdrop2 {
+  0% {
+    background-position: 0px -100px;
+  }
+  100% {
+    background-position: 0px 100vh;
+  }
+}
+@keyframes snowdrop3 {
+  0% {
+    background-position: 0px 100px;
+  }
+  100% {
+    background-position: 300px 100vh;
+  }
+}
+
+.train .cargo {
+  position: absolute;
+  left: calc(
+    calc(0.27vw * calc(calc(2 * var(--i)) - 1)) +
+      calc(calc(var(--i) - 1) * 5.9vw)
+  );
+  width: 5.9vw;
+  height: 7vh;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  box-shadow: 0 0 10px #99e9f2, 0 0 30px #99e9f2, inset 0 0 10px #99e9f2,
+    inset 0 0 30px #99e9f2;
+  text-align: center;
+
+  animation: cargoneon 1s linear infinite;
+}
+.train .cargo > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: #d6336c;
+  font-weight: 700;
+  font-size: 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  word-break: break-all;
+  text-transform: uppercase;
+}
+.cargowrap {
+  display: flex;
+  position: absolute;
+  top: -6vh;
+}
+@keyframes cargoneon {
+  0% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
